@@ -17,7 +17,7 @@ Founder & Owner, Combo Fashion Hub
 
 ## 🎯 Purpose
 
-This website is developed for **Combo Fashion Hub**, a real retail fashion store. It is programmed by **Utkarsh Tripathi** to showcase the store's products, services, and brand identity to customers online.
+This website is developed for **Combo Fashion Hub**, a real retail fashion store. It is programmed with **Utkarsh Tripathi** to showcase the store's products, services, and brand identity to customers online.
 
 ---
 
