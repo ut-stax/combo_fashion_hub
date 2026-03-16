@@ -76,9 +76,7 @@ export default function AdminLogin() {
           </button>
         </form>
         
-        <p className="text-xs text-[#7A7062] text-center mt-4">
-          Login: shi_va11011 / #6263679148
-        </p>
+
       </div>
     </div>
   )
