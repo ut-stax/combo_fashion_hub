@@ -1,0 +1,6 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f5f5f5"/>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="24" fill="#888" text-anchor="middle" dominant-baseline="middle">
+    Fashion Hero Image Placeholder
+  </text>
+</svg>
