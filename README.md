@@ -10,14 +10,14 @@ A modern, responsive e-commerce website for Combo Fashion Hub - your ultimate de
 
 ## 👤 Owner
 
-**Nikhil Shamra**  
+**Shiva Sharma**  
 Founder & Owner, Combo Fashion Hub
 
 ---
 
 ## 🎯 Purpose
 
-This website is developed for **Combo Fashion Hub**, a real retail fashion store. It is programmed with **Utkarsh Tripathi** to showcase the store's products, services, and brand identity to customers online.
+This website is developed for **Combo Fashion Hub**, a real retail fashion store. It is programmed with **Nikhil Sharma & Utkarsh Tripathi** to showcase the store's products, services, and brand identity to customers online.
 
 ---
 
