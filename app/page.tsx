@@ -5,6 +5,13 @@ import { STORE_IMAGES } from "@/lib/store-images"
 import { getProducts } from "@/lib/firebase-products"
 import SloganDisplay from "@/components/slogan-display"
 
+// Helper to check if image URL is valid
+function isValidImageUrl(url: string): boolean {
+  if (!url || url.trim() === "") return false
+  if (url === "/placeholder.svg") return true
+  return url.startsWith("http") || url.startsWith("/")
+}
+
 // Shuffle array function for random selection
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
@@ -13,6 +20,14 @@ function shuffleArray<T>(array: T[]): T[] {
     ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled
+}
+
+// Get safe image URL with fallback
+function getSafeImageUrl(product: { image?: string } | undefined): string {
+  if (!product || !product.image || !isValidImageUrl(product.image)) {
+    return "/placeholder.svg"
+  }
+  return product.image
 }
 
 export default async function LandingPage() {
@@ -99,7 +114,7 @@ export default async function LandingPage() {
           {/* Row 1 */}
           <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
             <Image
-              src={randomProducts[0]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[0])}
               alt={randomProducts[0]?.type || "Product"}
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -108,7 +123,7 @@ export default async function LandingPage() {
 
           <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow mt-16">
             <Image
-              src={randomProducts[1]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[1])}
               alt={randomProducts[1]?.type || "Product"}
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -118,7 +133,7 @@ export default async function LandingPage() {
           {/* Row 2 */}
           <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow -mt-8">
             <Image
-              src={randomProducts[2]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[2])}
               alt={randomProducts[2]?.type || "Product"}
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -127,7 +142,7 @@ export default async function LandingPage() {
 
           <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow mt-12">
             <Image
-              src={randomProducts[3]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[3])}
               alt={randomProducts[3]?.type || "Product"}
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -142,7 +157,7 @@ export default async function LandingPage() {
           {/* Product 1 - Large, spans 2 columns on md+ */}
           <div className="relative h-44 md:h-64 lg:h-72 rounded-xl md:rounded-2xl overflow-hidden shadow-lg col-span-1 md:col-span-1">
             <Image
-              src={randomProducts[0]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[0])}
               alt={randomProducts[0]?.type || "Product"}
               fill
               className="object-cover"
@@ -152,7 +167,7 @@ export default async function LandingPage() {
           {/* Product 2 - Medium tall */}
           <div className="relative h-32 md:h-48 lg:h-56 rounded-xl md:rounded-2xl overflow-hidden shadow-lg mt-4 md:mt-8">
             <Image
-              src={randomProducts[1]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[1])}
               alt={randomProducts[1]?.type || "Product"}
               fill
               className="object-cover"
@@ -162,7 +177,7 @@ export default async function LandingPage() {
           {/* Product 3 - Small */}
           <div className="relative h-28 md:h-40 lg:h-48 rounded-xl md:rounded-2xl overflow-hidden shadow-lg mt-2 md:mt-4">
             <Image
-              src={randomProducts[2]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[2])}
               alt={randomProducts[2]?.type || "Product"}
               fill
               className="object-cover"
@@ -172,7 +187,7 @@ export default async function LandingPage() {
           {/* Product 4 - Tall */}
           <div className="relative h-40 md:h-56 lg:h-64 rounded-xl md:rounded-2xl overflow-hidden shadow-lg mt-2 md:mt-6">
             <Image
-              src={randomProducts[3]?.image || "/placeholder.svg"}
+              src={getSafeImageUrl(randomProducts[3])}
               alt={randomProducts[3]?.type || "Product"}
               fill
               className="object-cover"
