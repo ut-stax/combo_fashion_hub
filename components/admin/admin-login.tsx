@@ -14,7 +14,7 @@ export default function AdminLogin() {
     setError("")
     
     // Simple credentials check
-    if (username === "admin" && password === "combo123") {
+    if (username === "shi_va11011" && password === "#6263679148") {
       // Set session in localStorage (matching auth context keys)
       localStorage.setItem("isAuthenticated", "true")
       localStorage.setItem("isAdmin", "true")
@@ -77,7 +77,7 @@ export default function AdminLogin() {
         </form>
         
         <p className="text-xs text-[#7A7062] text-center mt-4">
-          Demo: admin / combo123
+          Login: shi_va11011 / #6263679148
         </p>
       </div>
     </div>
